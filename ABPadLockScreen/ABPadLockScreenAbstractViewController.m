@@ -130,6 +130,10 @@
     }
 }
 
+- (BOOL)prefersStatusBarHidden {
+	return YES;
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
