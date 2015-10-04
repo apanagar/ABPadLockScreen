@@ -120,18 +120,23 @@
 							   //RGB color
 							   ((componentColors[0] * 299) + (componentColors[1] * 587) + (componentColors[2] * 114)) / 1000);
     
-	if (colorBrightness < 0.5)
-    {
-        return UIStatusBarStyleLightContent;
-    }
-    else
-    {
+//	if (colorBrightness < 0.5)
+//    {
+//        return UIStatusBarStyleLightContent;
+//    }
+//    else
+//    {
+		CGRect screen = [[UIScreen mainScreen] bounds];
+		UIView *background = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screen.size.width, 20)];
+		background.backgroundColor = [UIColor whiteColor];
+		[self.view addSubview:background];
+		
         return UIStatusBarStyleDefault;
-    }
+//    }
 }
 
 - (BOOL)prefersStatusBarHidden {
-	return YES;
+	return NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated
